@@ -1,4 +1,3 @@
-Bet! Here’s the full README all wrapped up nice and neat in one file, ready to drop into your project root as `README.md`:
 
 ````markdown
 # Contact Management with Livewire (Laravel)
@@ -52,12 +51,9 @@ php artisan migrate
 php artisan serve
 ```
 
-Visit `http://localhost:8000` and start managing your contacts!
+Remove my server settings(please check vite.config.js) and then visit `http://localhost:8000` and start managing your contacts!
 
 ---
-
-Simple. Reactive. Efficient.
-Built with the power of Laravel + Livewire.
 
 ---
 
