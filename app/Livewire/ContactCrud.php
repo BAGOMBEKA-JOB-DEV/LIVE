@@ -12,7 +12,10 @@ class ContactCrud extends Component
 
     public $isEdit = false;
 
+    public $search = '';
+
     public $showModal = false;
+    public $showAddContactModal = false;
     public $showViewModal = false;
     public $showDeleteModal = false;
 
@@ -24,7 +27,7 @@ class ContactCrud extends Component
 
     public function render()
     {
-        $this->contacts = Contact::all();
+        $this->contacts = Contact::orderBy('created_at', 'desc')->get();
         return view('livewire.contact-crud');
     }
 
@@ -67,7 +70,7 @@ class ContactCrud extends Component
         ]);
 
         $this->resetFields();
-        $this->showModal = false;
+        $this->showAddContactModal = false;
         $this->successMessage = 'Contact added successfully!';
         $this->showSuccessModal = true;
     }
