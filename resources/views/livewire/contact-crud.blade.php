@@ -17,13 +17,14 @@
 </div>
 
 
+
    <!-- Add Contact  Modal -->
    @if ($showAddContactModal)
         <div class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
             <div class="bg-white rounded-lg shadow-lg w-[800px] p-6 relative">
             <button 
-                wire:click="$set('showAddContactModal', false)" 
-                class="absolute top-2 right-2 w-5 h-5 flex items-center justify-center rounded-full
+                wire:click="closeModals"
+                class="absolute top-2 right-2 w-5 h-5 flex items-center  justify-center rounded-full
                  border border-green-500 text-green-500  transition active:rotate-180 transition-transform duration-200"
                 aria-label="Close"
             >
@@ -99,7 +100,7 @@
         <div class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
             <div class="bg-white rounded-lg shadow-lg w-[800px] p-6 relative">
             <button 
-                wire:click="$set('showModal', false)" 
+                wire:click="closeModals" 
                 class="absolute top-2 right-2 w-5 h-5 flex items-center justify-center rounded-full
                  border border-green-500 text-green-500  transition active:rotate-180 transition-transform duration-200"
                 aria-label="Close"
