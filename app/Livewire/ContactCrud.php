@@ -166,6 +166,7 @@ class ContactCrud extends Component
     {
         $this->resetFields();
         $this->showModal = false;
+        $this->showAddContactModal = false;
         $this->showViewModal = false;
         $this->showDeleteModal = false;
     }
