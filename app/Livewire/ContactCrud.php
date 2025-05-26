@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Contact;
+use Illuminate\Validation\Rule;
 
 class ContactCrud extends Component
 {
@@ -48,8 +49,8 @@ class ContactCrud extends Component
     public function store()
     {
         $this->validate([
-            'name' => 'required',
-            'email' => 'required|email',
+            'name' => ['required', Rule::unique('contacts', 'name')],
+            'email' => ['required', 'email', Rule::unique('contacts', 'email')],
             'phone_number' => 'nullable|string',
             'address' => 'nullable|string',
             'country' => 'nullable|string',
@@ -74,6 +75,14 @@ class ContactCrud extends Component
         $this->successMessage = 'Contact added successfully!';
         $this->showSuccessModal = true;
     }
+
+
+    //validation messages
+    protected $messages = [
+        'name.unique' => 'That name is already taken. Choose a different name!.',
+        'email.unique' => 'This email is already registered.',
+    ];
+    
 
     public function edit($id)
     {
@@ -155,6 +164,7 @@ class ContactCrud extends Component
 
     public function closeModals()
     {
+        $this->resetFields();
         $this->showModal = false;
         $this->showViewModal = false;
         $this->showDeleteModal = false;
