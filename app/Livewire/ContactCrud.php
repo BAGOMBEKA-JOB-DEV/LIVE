@@ -51,7 +51,7 @@ class ContactCrud extends Component
         $this->validate([
             'name' => ['required', Rule::unique('contacts', 'name')],
             'email' => ['required', 'email', Rule::unique('contacts', 'email')],
-            'phone_number' => 'nullable|string',
+           'phone_number' => [ 'nullable', 'regex:/^256\d{9}$/', Rule::unique('contacts', 'phone_number'),],
             'address' => 'nullable|string',
             'country' => 'nullable|string',
             'occupation' => 'nullable|string',
@@ -81,6 +81,7 @@ class ContactCrud extends Component
     protected $messages = [
         'name.unique' => 'That name is already taken. Choose a different name!.',
         'email.unique' => 'This email is already registered.',
+        'phone_number.regex' => 'Phone number should start with 256 and be 10 digits long!.',
     ];
     
 
