@@ -53,6 +53,8 @@ php artisan serve
 
 Remove my server settings(please check vite.config.js) and then visit `http://localhost:8000` and start managing your contacts!
 
+Or you  can just replace my IP Address with yours and access your project on (eg. 10.160.0.57:3000). There,  you will be able to access your project over a network💯💯💪
+
 ---
 
 ---
