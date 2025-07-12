@@ -57,6 +57,3 @@ Or you  can just replace my IP Address with yours and access your project on (eg
 
 ---
 
----
-
-```
